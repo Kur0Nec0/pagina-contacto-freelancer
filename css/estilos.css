@@ -1,0 +1,231 @@
+/* BOX-SIZING PAUL IRISH --- apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    min-height: 100%;
+    font-size: 62.5% /*Agregamos rem a la pagina (1rem = 10px)*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*Custom properties (variables)*/
+:root {
+    --gris: #757575;
+    --amarillo_prim: #ffc107;
+    --oscuro: #212121;
+    --azul_boton: #0097a7;
+}
+
+/*---------------------------------- GLOBALES -----------------------------------------*/
+
+/*Quitamos los margenes de los titulos y subtitulos*/
+h1, h2, h3, h4 {
+    margin: 0;
+}
+h2, h3, h4 {
+    text-align: center;
+}
+h3 {
+    color: var(--azul_boton);
+    font-weight: 400;
+    font-size: 3rem;
+}
+p {
+    font-size: 1.8rem;
+    line-height: 3rem
+}
+
+/*---------------------------------- UTILIDADES -----------------------------------------*/
+
+/*Boton*/
+.boton {
+    background-color: var(--azul_boton);
+    padding: 1rem 5rem; /*Agrandamos el boton*/
+    color: white; /*Color del texto*/
+    text-decoration: none; /*Quitamos subrayado*/
+    text-transform: uppercase; /*Ponemos mayusculas*/
+    font-weight: 700; /*Grosor del texto*/
+    font-size: 2.2rem; /*Tamaño del texto*/
+    border-radius: .5rem; /*Esquinas redondeadas*/
+    border: none;
+
+    display: inline-block; /*Para habilitar el margen*/
+
+    margin-top: 1rem; /*margen arriba del boton*/
+}
+.boton:hover {
+    cursor: pointer;
+}
+
+/*Contenedor*/
+.contenedor {
+    max-width: 1200px;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0px 6px 7px 0px rgba(0,0,0,0.56);
+    -moz-box-shadow: 0px 6px 7px 0px rgba(0,0,0,0.56);
+    box-shadow: 0px 6px 7px 0px rgba(0,0,0,0.56);
+}
+
+/*---------------------------------- DEMAS -----------------------------------------*/
+
+/*Diseño del body*/
+body {
+    font-family: 'Krub', sans-serif; /*Fuente de la pagina*/
+    min-height: 100%;
+    background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); /*Fondo gradiente*/
+    font-size: 1.6rem; /*ajustamos el tamaño de la fuente en nuestro body*/
+}
+
+/*Navegacion*/
+.site-header {
+    background-color: white; /*Fondo de barra de navegacion blanco*/
+}
+.site-header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    display: flex; /*Habilitamos flex*/
+    
+    flex-direction: column; /*Ponemos en columna si se ve desde una pantalla pequeña*/
+    align-items: center;
+}
+@media (min-width: 768px /*Cuando se tenga una pantalla con un minimo de 768px se aplicara el media query*/) {
+    .site-header nav {
+        flex-direction: row; /*Ponemos en vertical*/
+        justify-content: space-between;
+    }
+}
+.site-header nav a {
+    color: var(--oscuro); /*Utilizamos la variable previamente creada en :root para agregar el color*/
+    font-size: 2.2rem;
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+.site-header nav a:last-of-type {
+    margin-bottom: 0;
+}
+@media (min-width: 768px /*Cuando se tenga una pantalla con un minimo de 768px se aplicara el media query*/) {
+    .site-header nav a {
+        margin-bottom: 0;
+    }
+}
+
+/*Hero*/
+.hero {
+    height: 45rem;
+    background-image: url(../img/hero.jpg);
+    position: relative; /*Colocamos el hero debajo del color*/
+
+    display: flex; /*Habilitamos flex*/
+
+    justify-content: center; /*Centrar texto horizontalmente*/
+    align-items: center; /*Centrar texto verticalmente*/
+}
+.hero::after {
+    content: ''; /*Pseudoelemento para oscurecer la immagen del hero*/
+    background-color: rgba(0, 0, 0, .7); /*Color negro con transparencia de 0.7*/
+    position: absolute; /*Colocamos el color por encima de la imagen*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.contenedor-hero {
+    color: white;
+    position: relative; /*Colocamos el texto delante del hero para que no se vea afectado por el color negro transparente*/
+    z-index: 1; /*Colocar el texto delante*/
+    text-align: center;
+}
+.contenedor-hero i {
+    font-size: 5rem;
+    color: var(--amarillo_prim); /*Color de nuestro icono fontawesome*/
+}
+
+/*Servicios*/
+.contenedor-servicios {
+    margin-top: 2rem;
+}
+@media (min-width: 768px /*Cuando se tenga una pantalla con un minimo de 768px se aplicara el media query*/) {
+    .contenedor-servicios {
+        display: flex;
+        justify-content: space-between;
+    }
+    .servicio {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+/*Iconos*/
+.iconos {
+    width: 10rem; /*tamaño*/
+    height: 10rem; /*altura*/
+    border-radius: 50%; /*Contenedor redondeado*/
+    background-color: var(--amarillo_prim); /*color de fondo*/
+    font-size: 3rem; /*tamaño de los iconos*/
+    margin: 0 auto; 
+    margin-top: 2rem; /*margen arriba*/
+
+    display: flex;
+
+    justify-content: space-evenly; /*dar un pequeño espacio entre iconos*/
+    align-items: center; /*alinear iconos*/
+}
+
+/*Formulario*/
+form {
+    background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+form legend {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--amarillo_prim);
+    margin: 3rem 0;
+}
+@media (min-width: 768px) {
+    form {
+        max-width: 80rem;
+        margin: 3rem auto;
+    }
+    .contenedor-campo {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; /*Para habilitar el wrap*/
+    }
+    .campo {
+        flex: 0 0 calc(50% - 1rem); /*Con el wrap que se coloquen los elementos 2 por cada fila*/
+    }
+}
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.campo label {
+    flex: 0 0 9rem; /*Permite darle bases a los campos y que se alineen bien*/
+    color: white;
+    font-weight: 700;
+}
+.campo input {
+    flex: 1; /*Factor de crecimiento*/
+    height: 4rem;
+}
+.campo textarea {
+    height: 6rem;
+    flex: 1;
+}
+.w-100 {
+    flex: 0 0 100%;
+}
+
+/*Boton enviar*/
+.enviar {
+    display: flex;
+    justify-content: center;
+}

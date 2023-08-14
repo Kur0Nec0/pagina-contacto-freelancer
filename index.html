@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página freelance</title>
+    <link rel="stylesheet" href="css/normalize.css"> <!--Agregamos NORMALIZE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Fuente de la pagina-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--CDN FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="css/estilos.css"> <!--Hoja de estilos-->
+</head>
+
+<!--Cuerpo de nuestra pagina web-->
+<body>
+    
+    <!--Header de la pagina-->
+    <header class="site-header">
+
+        <!--Navegacion del sitio-->
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Clientes</a>
+            <a href="#">Contactos</a>
+        </nav>
+    </header>
+
+    <!--Hero/Imagen a principio de pagina-->
+    <div class="hero">
+
+        <div class="contenedor-hero">
+            <h1>Diseño y desarrollo freelancer</h1>
+            <p><i class="fa-solid fa-location-dot"></i> Caracas, Venezuela</p>
+            <a href="#" class="boton">Contactar</a>
+        </div>
+
+    </div>
+
+    <!--Contenedor para tener toda nuestra pagina-->
+    <div class="contenedor">
+
+        <!--Contenido principal de la pagina-->
+        <main class="servicios">
+
+            <h2>Nuestros servicios</h2>
+
+            <!--Seccion de los distintos servicios-->
+            <div class="contenedor-servicios">
+
+                <!--Servicio diseño web-->
+                <div class="servicio">
+
+                    <h3>Diseño web</h3>
+
+                    <div class="iconos">
+                        <i class="fa-solid fa-pen-fancy"></i>
+                    </div>
+
+                    <p>In non odio accumsan turpis cursus eleifend. Donec quam turpis, venenatis quis consectetur 
+                    id, sodales quis tortor. Nullam vitae massa eu nisl dignissim sagittis. Vivamus laoreet finibus 
+                    venenatis. Aenean lacinia magna sit amet mattis dapibus. Duis varius sed arcu in porta. Vestibulum 
+                    urna felis, suscipit sit amet pretium vel, sagittis vitae massa.</p>
+
+                </div>
+
+                <!--Servicio Aplicaciones moviles-->
+                <div class="servicio">
+
+                    <h3>Aplicaciones móviles</h3>
+
+                    <div class="iconos">
+                        <i class="fa-brands fa-android"></i>
+                        <i class="fa-brands fa-apple"></i>
+                    </div>
+                    
+                    <p>In non odio accumsan turpis cursus eleifend. Donec quam turpis, venenatis quis consectetur 
+                    id, sodales quis tortor. Nullam vitae massa eu nisl dignissim sagittis. Vivamus laoreet finibus 
+                    venenatis. Aenean lacinia magna sit amet mattis dapibus. Duis varius sed arcu in porta. Vestibulum 
+                    urna felis, suscipit sit amet pretium vel, sagittis vitae massa.</p>
+
+                </div>
+
+                <!--Servicio social media-->
+                <div class="servicio">
+
+                    <h3>Social media</h3>
+
+                    <div class="iconos">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    
+                    <p>In non odio accumsan turpis cursus eleifend. Donec quam turpis, venenatis quis consectetur 
+                    id, sodales quis tortor. Nullam vitae massa eu nisl dignissim sagittis. Vivamus laoreet finibus 
+                    venenatis. Aenean lacinia magna sit amet mattis dapibus. Duis varius sed arcu in porta. Vestibulum 
+                    urna felis, suscipit sit amet pretium vel, sagittis vitae massa.</p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <!--Seccion de formulario de contacto-->
+        <section id="contacto" class="contacto">
+
+            <h2>Contacto</h2>
+
+            <!--Formulario de contacto-->
+            <form action="#">
+                <legend>Contáctanos rellenando este formulario</legend>
+
+                <!--Contenedor de campos de formulario-->
+                <div class="contenedor-campo">
+
+                    <!--Campo de nombre-->
+                    <div class="campo">
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" placeholder="Nombre completo">
+                    </div>
+
+                    <!--Campo de telefono-->
+                    <div class="campo">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefono" placeholder="Número telefónico">
+                    </div>
+
+                    <!--Campo de correo electronico-->
+                    <div class="campo w-100">
+                        <label>Correo electrónico:</label>
+                        <input type="email" name="correo" placeholder="Dirección de correo electrónico">
+                    </div>
+
+                    <!--Campo de mensaje-->
+                    <div class="campo w-100">
+                        <label>Mensaje:</label>
+                        <textarea name="mensaje"></textarea>
+                    </div>
+                </div>
+
+                <!--Boton de enviar-->
+                <div class="enviar">
+                    <input type="submit" class="boton" value="Enviar">
+                </div>
+                
+            </form>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
